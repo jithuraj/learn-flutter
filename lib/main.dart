@@ -1,34 +1,22 @@
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:myapp/screen_home.dart';
 
-main() {
-  runApp(MyApp());
-}
+void main() => runApp(myApp());
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+
+class myApp extends StatelessWidget {
+  const myApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        primaryColor: Colors.cyan,
+        primarySwatch: Colors.purple,
       ),
-      home: HomeScreen(),
+      home: ScreenHome(),
     );
   }
 }
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: Column(
-        children: [Text("jihturaj"), Text("Bengalam")],
-      ),
-    );
-  }
-}
