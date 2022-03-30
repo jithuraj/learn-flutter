@@ -24,18 +24,11 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Colors.green,
-      // appBar: AppBar(),
-      body: SafeArea(
-          child: Text(
-        "Crossroads",
-        style: TextStyle(
-          color: Colors.white,
-          fontSize: 50,
-          fontWeight: FontWeight.bold,
-        ),
-      )),
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: Column(
+        children: [Text("jihturaj"), Text("Bengalam")],
+      ),
     );
   }
 }
