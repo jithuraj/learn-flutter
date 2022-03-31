@@ -15,14 +15,14 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     // TODO: implement initState
-    splashTimer(context);
+    // splashTimer(context);
     super.initState();
 
   }
 
   @override
   Widget build(BuildContext context) {
-    // getLoginState(context);
+    getLoginState(context);
     return Scaffold(
       appBar: AppBar(
         title: Text('jihhu.io'),

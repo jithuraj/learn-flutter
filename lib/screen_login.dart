@@ -26,11 +26,22 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Column(
             children: [
               TextFormField(
-                decoration: InputDecoration(hintText: 'Enter username'),
+                decoration: InputDecoration(hintText: ' username',
+                border: OutlineInputBorder(
+
+                ),),
                 controller: _usernameFieldController,
               ),
+              SizedBox(
+                height: 5,
+              ),
               TextFormField(
-                decoration: InputDecoration(hintText: 'Enter password'),
+                obscureText: true,
+                decoration: InputDecoration(hintText: ' password',
+                border: OutlineInputBorder(
+
+                )
+                ),
                 controller: _passwordFieldController,
               ),
               Padding(
