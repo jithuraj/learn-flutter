@@ -1,10 +1,11 @@
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:myapp/home.dart';
-import 'package:myapp/screen_2.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:myapp/screen_home.dart';
+import 'package:myapp/screen_login.dart';
+import 'package:myapp/screen_splash.dart';
 
-main() {
+void main(){
   runApp(myApp());
 }
 
@@ -14,14 +15,12 @@ class myApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Home(),
+      home: SplashScreen(),
       routes: {
-        'home': (ctx) => Home(),
-        'screen_2':(ctx)=>Screen2(),
-      },
-
+        'splash_screen': (context) => SplashScreen(),
+        'home_screen':(context)=> HomeScreen(),
+        'login_screen':(context)=>LoginScreen(),
+      }
     );
   }
 }
-
-
