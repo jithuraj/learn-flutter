@@ -8,8 +8,7 @@ class ScreenHome extends StatefulWidget {
 }
 
 class _ScreenHomeState extends State<ScreenHome> {
-
-  int _counter =0;
+  int _counter = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -17,17 +16,32 @@ class _ScreenHomeState extends State<ScreenHome> {
       appBar: AppBar(
         title: Text('Flutter Demo Home Page'),
       ),
-      body: Center(
-        child: Text(_counter.toString()),
-      ),
+      body: Center(child: Text("Hai")),
       floatingActionButton: FloatingActionButton(
-        onPressed: (){
-          setState(() {
-          _counter++;
-          });
+        onPressed: () {
+          showBottomSheet(context);
         },
         child: Icon(Icons.add),
       ),
     );
   }
+}
+
+Future<void> showBottomSheet(BuildContext context) async {
+  showModalBottomSheet(context: context, builder: (context1){
+    return Container(
+      width: double.infinity,
+      height: 500,
+      color: Colors.orange,
+
+      child: ListView(
+        children: [
+          Text("title"),
+          TextButton(onPressed: (){
+            Navigator.pop(context1);
+          }, child: Text("close"))
+        ],
+      ),
+    );
+  });
 }
