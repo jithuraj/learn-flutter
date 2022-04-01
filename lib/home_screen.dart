@@ -9,26 +9,31 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('snack bar'),
       ),
-      body: Column(
-        children: [
-          ElevatedButton(
-              child: Text('hai'),
-              onPressed: () {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content:
-                  Row(
-                    children: [
-                      Text('hiaiii'),
-                      ElevatedButton(onPressed: (){
-
-                      }, child: Text('clickkkk'))
-                    ],
-                  )
-                  ),
-                );
-              })
-        ],
+      body: ElevatedButton(
+        onPressed: (){
+         showDialog(context: context, builder: (ctx)=>showAlertDialog(context));
+        },
+        child: Text('click me'),
       ),
     );
   }
+
+  Widget showAlertDialog(BuildContext context){
+
+   return AlertDialog(
+      title: Text('Accept?'),
+      content: Text('would you like to accept this proposal'),
+      actions: [
+        TextButton(onPressed: (){
+          Navigator.of(context).pop();
+        }, child: Text('Yes')),
+        TextButton(onPressed: (){
+          Navigator.of(context).pop();
+        }, child: Text('No')),
+      ],
+    );
+
+  }
+
+
 }
